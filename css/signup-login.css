@@ -10,9 +10,10 @@ body {
     width: 100%;
     flex-wrap: wrap;
 }
+
 .signup-section, .login-section {
     width: 100%;
-    max-width: 400px;
+    max-width: 350px;
     margin: auto;
     padding: 40px;
     background: none;
@@ -20,59 +21,127 @@ body {
     display: none;
     text-align: center;
 }
+
 .signup-section {
-    display: block; /* Default to signup */
+    display: block; /* Show Signup by default */
+}
+
+h1 {
+    font-size: 40px;
+    margin: 0 0 10px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+input, button {
+    max-width: 350px;
+    width: 70%;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: white;
+    border: 2px solid white;
+    outline: none;
+    margin-top: 13px;
+}
+
+input::placeholder {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    letter-spacing: 1px;
+    opacity: 0.7;
+}
+
+input {
+    background-color: transparent;
+    color: white;
+}
+
+button {
+    background-color: #4CAF50;
+    color: black;
+    font-size: large;
+    border: 1px solid #45a049;
+    border-radius: 10px;
+    box-shadow: 2px 5px 3px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+button:hover {
+    background-color:  #45a049;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.forgot-password {
+    text-align: right;
+    margin-top: 17px;
+    margin-bottom: 10px;
+    width: 70%;
+    margin-left: 0 auto;
+    margin-right: auto; 
+}
+
+.forgot-password a {
+    color: #16477E;
 }
 
 .middle-section {
     width: 100%;
-    background: url('../img/background1.jpg') no-repeat center/cover;
+    background: linear-gradient(130deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/background1.jpg') no-repeat center/cover;
     color: #fff;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 40px;
+    position: relative;
 }
-h1 {
-    font-size: 40px;
-    margin: 0 0 10px;
+
+.middle-section h1 {
+    position: absolute;
+    top: 10%;
+    left: -40px;
+    transform: rotate(-90deg);
+    font-size: 32px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    text-shadow: 2px 3px 3px rgba(225, 225, 225, 0.5);
 }
-h2 {
-    margin-bottom: 20px;
+
+.middle-section p {
+    margin: 10px 0;
+    line-height: 1.6;
+    font-size: 14px;
 }
-input, button {
-    max-width: 100%;
-    width: 70%;
-    padding: 10px;
-    margin-bottom: 10px;
-    color: #fff;
-    border: 1px solid white;
-    outline: none;
-    margin-top: 10px;
+
+.middle-section .btn-section {
+    margin-top: 20px;
 }
-input {
-    background-color: transparent;
-    color: white;
-}
-button {
-    background-color: #4CAF50;
-    color: black;
-    font-size: large;
+
+.middle-section .btn-section button {
+    background-color: #fff;
+    color: #16477E;
     border: none;
-    border-radius: 10px;
-    box-shadow: 2px 5px 3px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 10px 20px;
     cursor: pointer;
 }
-button:hover {
-    background-color:  #45a049;
-}
-a {
-    color: black;
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
+
+.middle-section .btn-section button:hover {
+    background-color: #16477E;
+    color: #fff;
 }
 
 @media (min-width: 768px) {

@@ -10,26 +10,28 @@
     <div class="container">
         <div class="signup-section">
             <h2>Signup Here</h2>
-            <input type="email" id="signup-email" placeholder="Email Address">
-            <input type="password" id="signup-password" placeholder="Password">
-            <input type="password" id="confirm-password" placeholder="Confirm Password">
+            <input type="email" id="signup-email" placeholder="Email Address" required>
+            <input type="password" id="signup-password" placeholder="Password" required>
+            <input type="password" id="confirm-password" placeholder="Confirm Password" required>
             <button onclick="signup()">Sign up</button>
             <p>Already have an account? <a href="#" onclick="showLogin()">Login here</a></p>
         </div>
         
+        <div class="login-section">
+            <h2>Login Here</h2>
+            <input type="email" id="login-email" placeholder="Email Address" required>
+            <input type="password" id="login-password" placeholder="Password" required>
+            <div class="forgot-password">
+                <a href="#">Forgot Password?</a>
+            </div>
+            <button onclick="login()">Login</button>
+            <p>Don't have an account yet? <a href="#" onclick="showSignup()">Signup here</a></p>
+        </div>
+
         <div class="middle-section">
             <h1>TASKIFY</h1>
             <p>Create, Collaborate, Conquer</p>
             <p>Manage tasks like a responsible adult.</p>
-        </div>
-
-        <div class="login-section">
-            <h2>Login Here</h2>
-            <input type="email" id="login-email" placeholder="Email Address">
-            <input type="password" id="login-password" placeholder="Password">
-            <a href="#">Forgot Password?</a>
-            <button onclick="login()">Login</button>
-            <p>Don't have an account yet? <a href="#" onclick="showSignup()">Signup here</a></p>
         </div>
     </div>
 
@@ -40,7 +42,8 @@
             const confirmPassword = document.getElementById('confirm-password').value;
 
             if (email && password && password === confirmPassword) {
-                alert('🎉 Account successfully created!');
+                alert('🎉 Account successfully created! Redirecting to home page...');
+                window.location.href = 'home.html'; // Redirect to home page
             } else if (!email || !password) {
                 alert('⚠️ Please fill out all fields.');
             } else {
@@ -49,7 +52,15 @@
         }
 
         function login() {
-            alert('🔓 Login successful (Demo feature)');
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+
+            if (email && password) {
+                alert('✅ Welcome back! Redirecting to your dashboard...');
+                window.location.href = 'home.html'; // Redirect to home page
+            } else {
+                alert('❗ Please enter valid login credentials.');
+            }
         }
 
         function showSignup() {
