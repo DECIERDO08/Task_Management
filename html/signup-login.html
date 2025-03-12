@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taskify | Signup & Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crete+Round:ital@0;1&family=Dancing+Script:wght@400..700&family=Jaro:opsz@6..72&family=Pacifico&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/signup-login.css">
 </head>
 <body>
@@ -13,8 +14,8 @@
             <input type="email" id="signup-email" placeholder="Email Address" required>
             <input type="password" id="signup-password" placeholder="Password" required>
             <input type="password" id="confirm-password" placeholder="Confirm Password" required>
-            <button onclick="signup()">Sign up</button>
-            <p>Already have an account? <a href="#" onclick="showLogin()">Login here</a></p>
+            <button class="submit" onclick="signup()">Sign up</button>
+            <p class="click">Already have an account? <a href="#" onclick="showLogin()">Login here</a></p>
         </div>
         
         <div class="login-section">
@@ -24,14 +25,41 @@
             <div class="forgot-password">
                 <a href="#">Forgot Password?</a>
             </div>
-            <button onclick="login()">Login</button>
-            <p>Don't have an account yet? <a href="#" onclick="showSignup()">Signup here</a></p>
+            <button class="submit" onclick="login()">Login</button>
+            <p class="click">Don't have an account yet? <a href="#" onclick="showSignup()">Signup here</a></p>
         </div>
 
-        <div class="middle-section">
-            <h1>TASKIFY</h1>
-            <p>Create, Collaborate, Conquer</p>
-            <p>Manage tasks like a responsible adult.</p>
+        <div class="signup-content">
+            <div class="content">
+                <h1>TASKIFY</h1>
+                <p class="content-opacity"> | Manage tasks like a responsible adult.</p>
+
+                <h3>Create • Collaborate • Conquer</h3>
+
+                <p>Taskify is your personal hub for managing tasks with ease and efficiency. Whether you're a</p>
+                <p>student juggling assignments, a professional managing projects, or simply organizing</p>
+                <p>personal to-dos, we're here to help you stay on track and productive.</p>
+                <div class="about">
+                    <a href="../html/about.html">Learn more</a>
+                </div>
+                <p>Sign up to get started or log in to continue where you left off! Let’s make task management
+                <p>easier and more organized—together!</p>
+            </div>
+        </div>
+
+        <div class="login-content">
+            <div class="content">
+                <h1>TASKIFY</h1>
+                <p class="content-opacity"> | Manage tasks like a responsible adult.</p>
+
+                <h3>Create • Collaborate • Conquer</h3>
+
+                <p><b>Welcome Back!</b> Log in to continue your journey of seamless task management</p>
+                <p>and stay on top of what matters most!</p>
+                <div class="about">
+                    <a href="../html/about.html">About</a>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -71,6 +99,20 @@
         function showLogin() {
             document.querySelector('.signup-section').style.display = 'none';
             document.querySelector('.login-section').style.display = 'block';
+        }
+
+        function showSignup() {
+            document.querySelector('.signup-section').style.display = 'block';
+            document.querySelector('.login-section').style.display = 'none';
+            document.querySelector('.signup-content').style.display = 'block';
+            document.querySelector('.login-content').style.display = 'none';
+        }
+
+        function showLogin() {
+            document.querySelector('.signup-section').style.display = 'none';
+            document.querySelector('.login-section').style.display = 'block';
+            document.querySelector('.signup-content').style.display = 'none';
+            document.querySelector('.login-content').style.display = 'block';
         }
     </script>
 </body>
